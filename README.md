@@ -1,1 +1,3 @@
-# apex-focus-
+# apex-focus
+
+MOPD-inspired active perception
