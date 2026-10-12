@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools==84.0.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "apexfocus"
+version = "0.1.0"
+description = "Active racing perception through crop-policy distillation"
+readme = "README.md"
+requires-python = ">=3.14,<3.15"
+dependencies = [
+    "torch==2.14.1",
+    "torchvision==0.29.1",
+    "ultralytics==8.4.175",
+    "opencv-python==5.0.0.93",
+    "gymnasium==1.4.0",
+    "numpy==2.5.4",
+    "pyyaml==6.0.3",
+]
+
+[project.optional-dependencies]
+tracking = ["wandb==0.30.0"]
+
+[dependency-groups]
+dev = ["pytest==9.1.1"]
+
+[project.scripts]
+apexfocus-env = "apexfocus.environment:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.uv]
+required-version = "==0.13.0"
+environments = [
+    "sys_platform == 'darwin' and platform_machine == 'arm64'",
+    "sys_platform == 'linux' and platform_machine == 'x86_64'",
+]
