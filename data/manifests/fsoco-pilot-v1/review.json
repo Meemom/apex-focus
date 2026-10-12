@@ -1,0 +1,22 @@
+{
+  "reviewed_on": "2026-10-12",
+  "images_checked": 150,
+  "boxes_checked": 2087,
+  "image_bytes_preserved": true,
+  "max_yolo_round_trip_error_pixels": 4.64000095234951e-07,
+  "overlays_spot_checked": [
+    "amz-5ac0154b87a5a37c6bb9.jpg",
+    "ecurieaix-471c362fe90233be7a8d.jpg",
+    "frt-005deba7d20e9b103a91.jpg",
+    "ka-ccf5c69899733d237e55.jpg",
+    "mms-5c8dcbb391526ae0b599.jpg",
+    "tuwr-a940dd8d0323b0e0c066.jpg"
+  ],
+  "visual_result": "Boxes aligned with cones in six team overlays; not an exhaustive semantic annotation review. Original borders and team watermarks are retained.",
+  "limitations": [
+    "Only 18 small validation cones; insufficient for strong accuracy claims.",
+    "Validation has no unknown_cone labels.",
+    "Perceptual duplicate search is heuristic, not proof of no leakage.",
+    "No existing cone checkpoint provided; provenance remains unapproved."
+  ]
+}
