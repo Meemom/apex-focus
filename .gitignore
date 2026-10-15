@@ -1,5 +1,6 @@
 # Existing local preference: ignore untracked Markdown files.
 *.md
+!docs/PR3.md
 
 # Python and build products
 .venv*/

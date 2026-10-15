@@ -1,0 +1,26 @@
+# PR 3 protocol. Freeze before inspecting validation results; changes require a new run.
+dataset: data/processed/fsoco-pilot-v1
+weights: runs/detector-pilot-v1/fit/weights/best.pt
+provenance: runs/detector-pilot-v1/provenance.json
+output: results/feasibility-pilot-v1
+device: cuda:0
+seed: 42
+# null means the entire validation split. A limited run can never pass Gate A.
+limit: null
+warmup: 3
+overlays: 3
+detector:
+  score_floor: 0.001
+  confidence: 0.25
+  nms_iou: 0.5
+  match_iou: 0.5
+  alpha: 1.0
+  max_det: 1000
+# Geometry is fixed: 2 rows x 3 columns, floor-divided boundaries, no overlap.
+# Every method uses FP32 and square letterbox (rect=False), with two distinct crops.
+gate:
+  minimum_small_recall_gain: 0.10  # absolute gain over full-image 640
+  maximum_fp_per_image_increase: 0.5
+  maximum_crop_p95_ms: 100.0
+  maximum_crop_to_1280_p95_ratio: 1.25
+  minimum_small_recall_gain_over_1280: 0.0
