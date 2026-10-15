@@ -1,0 +1,13 @@
+source_root: data/raw/fsoco-pilot
+output: data/processed/fsoco-pilot-v1
+mode: pilot
+seed: 42
+validation_fraction: 0.2
+# Pilot images are development-only. Reserve unseen source groups for the later study.
+test_fraction: 0.0
+pilot_manifest: null
+near_duplicate_hamming: 4
+small_area_quantile: 0.25
+checkpoint_provenance:
+  status: not_provided
+  decision: PR 3 must use an auditable starting checkpoint; existing cone weights are not approved.

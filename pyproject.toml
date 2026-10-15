@@ -16,6 +16,7 @@ dependencies = [
     "gymnasium==1.4.0",
     "numpy==2.5.4",
     "pyyaml==6.0.3",
+    "requests==2.34.2",
 ]
 
 [project.optional-dependencies]

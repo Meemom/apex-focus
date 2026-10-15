@@ -12,6 +12,7 @@ dist/
 
 # Local data and experiment artifacts
 data/**
+!data/README.md
 !data/manifests/
 !data/manifests/**
 checkpoints/
