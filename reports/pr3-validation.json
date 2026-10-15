@@ -1,0 +1,208 @@
+{
+  "base_commit": "baa2561",
+  "branch": "crop-inference",
+  "cpu_smoke": {
+    "config": {
+      "dataset": "data/processed/fsoco-pilot-v1",
+      "detector": {
+        "alpha": 1.0,
+        "confidence": 0.25,
+        "match_iou": 0.5,
+        "max_det": 1000,
+        "nms_iou": 0.5,
+        "score_floor": 0.001
+      },
+      "device": "cpu",
+      "gate": {
+        "maximum_crop_p95_ms": 100.0,
+        "maximum_crop_to_1280_p95_ratio": 1.25,
+        "maximum_fp_per_image_increase": 0.5,
+        "minimum_small_recall_gain": 0.1,
+        "minimum_small_recall_gain_over_1280": 0.0
+      },
+      "limit": null,
+      "output": "results/feasibility-pr3-cpu-smoke",
+      "overlays": 3,
+      "provenance": "runs/detector-pr3-cpu-smoke/provenance.json",
+      "seed": 42,
+      "warmup": 3,
+      "weights": "runs/detector-pr3-cpu-smoke/fit/weights/best.pt"
+    },
+    "dataset_fingerprint": "9821598794fe5df40567ca473e40b642b244a3053abc6462b5f7492c2ac7164e",
+    "environment": {
+      "machine": "arm64",
+      "packages": {
+        "apexfocus": "0.1.0",
+        "gymnasium": "1.4.0",
+        "numpy": "2.5.4",
+        "opencv-contrib-python": null,
+        "opencv-contrib-python-headless": null,
+        "opencv-python": "5.0.0.93",
+        "opencv-python-headless": null,
+        "pytest": "9.1.1",
+        "pyyaml": "6.0.3",
+        "torch": "2.14.1",
+        "torchvision": "0.29.1",
+        "ultralytics": "8.4.175",
+        "wandb": null
+      },
+      "platform": "macOS-26.4-arm64-arm-64bit-Mach-O",
+      "python": "3.14.5",
+      "requested_device": "cpu"
+    },
+    "model": "YOLO11n from random initialization",
+    "overlays_generated": 3,
+    "overlays_visually_checked": [
+      "1adb1749f0366a4bc430.jpg"
+    ],
+    "pairs_evaluated": 375,
+    "purpose": "Integration only; one epoch is not a trained baseline for a research claim",
+    "source_artifacts": "results/feasibility-pr3-cpu-smoke",
+    "table": {
+      "full_1280": {
+        "ap_classes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "fp": 0,
+        "fp_per_image": 0.0,
+        "gt": 240,
+        "images": 25,
+        "map50_95": 0.0,
+        "oracle_gap": 0.0,
+        "p50_ms": 94.62895803153515,
+        "p95_ms": 104.96226658578962,
+        "precision": 0.0,
+        "recall": 0.0,
+        "small_gt": 18,
+        "small_recall": 0.0,
+        "small_tp": 0,
+        "tp": 0,
+        "utility_per_image": 0.0
+      },
+      "full_640": {
+        "ap_classes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "fp": 0,
+        "fp_per_image": 0.0,
+        "gt": 240,
+        "images": 25,
+        "map50_95": 0.0,
+        "oracle_gap": 0.0,
+        "p50_ms": 24.725999974180013,
+        "p95_ms": 29.87162482459097,
+        "precision": 0.0,
+        "recall": 0.0,
+        "small_gt": 18,
+        "small_recall": 0.0,
+        "small_tp": 0,
+        "tp": 0,
+        "utility_per_image": 0.0
+      },
+      "heuristic_2": {
+        "ap_classes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "fp": 0,
+        "fp_per_image": 0.0,
+        "gt": 240,
+        "images": 25,
+        "map50_95": 0.0,
+        "oracle_gap": 0.0,
+        "p50_ms": 74.48829099303111,
+        "p95_ms": 81.94571604253724,
+        "precision": 0.0,
+        "recall": 0.0,
+        "small_gt": 18,
+        "small_recall": 0.0,
+        "small_tp": 0,
+        "tp": 0,
+        "utility_per_image": 0.0
+      },
+      "oracle_2": {
+        "ap_classes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "fp": 0,
+        "fp_per_image": 0.0,
+        "gt": 240,
+        "images": 25,
+        "map50_95": 0.0,
+        "oracle_gap": 0.0,
+        "p50_ms": 74.8727080062963,
+        "p95_ms": 87.75100799975914,
+        "precision": 0.0,
+        "recall": 0.0,
+        "small_gt": 18,
+        "small_recall": 0.0,
+        "small_tp": 0,
+        "tp": 0,
+        "utility_per_image": 0.0
+      },
+      "random_2": {
+        "ap_classes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "fp": 0,
+        "fp_per_image": 0.0,
+        "gt": 240,
+        "images": 25,
+        "map50_95": 0.0,
+        "oracle_gap": 0.0,
+        "p50_ms": 74.39279195386916,
+        "p95_ms": 79.17193358298391,
+        "precision": 0.0,
+        "recall": 0.0,
+        "small_gt": 18,
+        "small_recall": 0.0,
+        "small_tp": 0,
+        "tp": 0,
+        "utility_per_image": 0.0
+      }
+    },
+    "training_config": {
+      "batch": 4,
+      "dataset": "data/processed/fsoco-pilot-v1",
+      "device": "cpu",
+      "epochs": 1,
+      "output": "runs/detector-pr3-cpu-smoke",
+      "seed": 42
+    },
+    "training_epoch_seconds": 20.6049,
+    "training_epochs": 1,
+    "training_images": 125,
+    "validation_images": 25,
+    "weight_sha256": "7d3efd81bbf3d0a576fbb93b893da87e9d7e5655f4ef9ff4061d794eb65a61b3",
+    "zero_metrics_explanation": "No detections from the deliberately undertrained one-epoch checkpoint; this is not a zoom feasibility result."
+  },
+  "gate": {
+    "reason": "Awaiting baseline training and full CUDA validation/timing on EC2.",
+    "status": "pending"
+  },
+  "installation": "uv sync --locked --offline --no-editable --reinstall-package apexfocus; reused .venv-pr2",
+  "local_tests": {
+    "command": ".venv-pr2/bin/python -m pytest -q",
+    "passed": 44
+  },
+  "pending": [
+    "100-epoch detector training on EC2",
+    "CUDA smoke and full five-method feasibility experiment",
+    "Gate A decision based on a useful frozen detector"
+  ],
+  "status": "implementation_verified_locally_experiment_pending"
+}

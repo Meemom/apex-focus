@@ -1,0 +1,7 @@
+# Auditable baseline: no external checkpoint and no unknown cone-training overlap.
+dataset: data/processed/fsoco-pilot-v1
+output: runs/detector-pilot-v1
+device: cuda:0
+epochs: 100
+batch: 8
+seed: 42
